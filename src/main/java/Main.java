@@ -5,6 +5,21 @@ public class Main {
        System.out.println(car.accelerate());
        System.out.println(car.brake());
 
+       Tesla tesla = new Tesla("legacy", 12);
+        System.out.println(tesla.startEngine());
+        System.out.println(tesla.accelerate());
+        System.out.println(tesla.brake());
+
+        Mustang mustang = new Mustang("navaro", 10);
+        System.out.println(mustang.startEngine());
+        System.out.println(mustang.accelerate());
+        System.out.println(mustang.brake());
+
+        Volvo volvo = new Volvo("XC", 12);
+        System.out.println(volvo.startEngine());
+        System.out.println(volvo.accelerate());
+        System.out.println(volvo.brake());
+
     }
 }
 
@@ -73,21 +88,50 @@ public class Main {
             }
         }
 
+        class Mustang extends Car{
+        public Mustang(String name, int cylinders) {
+        super(name, cylinders);
+        }
+
+            @Override
+            public String startEngine() {
+                return "Mustang->startEngine()";
+            }
+
+            @Override
+            public String accelerate() {
+                return "Mustang->accelerate()";
+            }
+
+            @Override
+            public String brake() {
+                return "Mustang->brake()";
+            }
+        }
 
 
-      //  class Mustang extends Car{
-      //      public Mustang(String name, int cylinders) {
-        //        super(name, cylinders);
-          //  }
+        class Volvo extends Car{
+            public Volvo(String name, int cylinders) {
+                super(name, cylinders);
+            }
 
-        //}
+            @Override
+            public String startEngine() {
+                return "Volvo->startEngine()";
+            }
+
+            @Override
+            public String accelerate() {
+                return "Volvo->accelerate()";
+            }
+
+            @Override
+            public String brake() {
+                return "Volvo->brake()";
+            }
+        }
 
 
-        //class Volvo extends Car{
-
-          //  }
-
-            //}
 
 
 
