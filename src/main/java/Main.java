@@ -1,6 +1,12 @@
 public class Main {
     public static void main(String[] args) {
+       Car car = new Car("roadTripCar", 8);
+       System.out.println(car.startEngine());
+       System.out.println(car.accelerate());
+       System.out.println(car.brake());
 
+    }
+}
 
 
         class Car {
@@ -12,7 +18,7 @@ public class Main {
             private boolean engine;
 
 
-            public Car(String name, int wheels, int cylinders, boolean doors, int speed, boolean engine) {
+            public Car(String name, int cylinders) {
                 this.name = name;
                 this.wheels = 4;
                 this.speed=speed;
@@ -21,69 +27,69 @@ public class Main {
                 this.engine = true;
             }
 
-            public void startEngine(boolean engine, boolean doors) {
-
-                if (engine == true && doors==true ) {
-                    System.out.println("Start engine");
-                } else {
-                    System.out.println("No engine and the doors are still open");
-                }
-
+            public String getName() {
+                return name;
             }
 
-            public void accelerate(int speed, int additionalSpeed) {
-                if (speed != 0) {
-                    if (speed>0 && speed<100){
-                    speed = additionalSpeed + speed;
-                    System.out.println("Accelerate the car by:" + additionalSpeed + "and make total speed" + speed);}
-                } else {
-                    System.out.println("Start engine first");
-                }
+            public int getCylinders() {
+                return cylinders;
             }
 
-            public void stopCar(int wheels, int cylinders){
-                if (wheels==4 && cylinders==4) {
-                    System.out.println("Stop the car safely");
-                }else{
-                    System.out.println("There is an issue with the car");
+            public int getSpeed() {
+                return speed;
+            }
+
+            public String startEngine() {
+                return "Car->startEngine()";
+            }
+
+            public String accelerate() {
+              return "Car->accelerate()";
+            }
+
+            public String brake(){
+                return "Car->brake()";
             }
         }
 
         class Tesla extends Car{
-            public Tesla(String name, int wheels, int cylinders, boolean doors, int speed, boolean engine) {
-                super(name, wheels, cylinders, doors, speed, engine);
+            public Tesla(String name, int cylinders) {
+                super(name, cylinders);
             }
 
             @Override
-            public void startEngine(boolean engine, boolean doors) {
-                super.startEngine(engine, doors);
-            }
-        }
-
-        class Mustang extends Car{
-            public Mustang(String name, int wheels, int cylinders, boolean doors, int speed, boolean engine) {
-                super(name, wheels, cylinders, doors, speed, engine);
+            public String startEngine() {
+                return "Tesla->startEngine()";
             }
 
             @Override
-            public void accelerate(int speed, int additionalSpeed) {
-                super.accelerate(speed, additionalSpeed);
-            }
-        }
-
-
-        class Volvo extends Car{
-            public Volvo(String name, int wheels, int cylinders, boolean doors, int speed, boolean engine) {
-                super(name, wheels, cylinders, doors, speed, engine);
+            public String accelerate() {
+                return "Tesla->accelerate()";
             }
 
             @Override
-            public void stopCar(int wheels, int cylinders) {
-                super.stopCar(wheels, cylinders);
+            public String brake() {
+                return "Tesla->brake()";
             }
         }
 
 
 
-    }
-}
+      //  class Mustang extends Car{
+      //      public Mustang(String name, int cylinders) {
+        //        super(name, cylinders);
+          //  }
+
+        //}
+
+
+        //class Volvo extends Car{
+
+          //  }
+
+            //}
+
+
+
+
+
